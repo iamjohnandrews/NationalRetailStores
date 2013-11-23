@@ -24,6 +24,10 @@
 		8ED2CFC518417227004DB31F /* StoreModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2CFC318417227004DB31F /* StoreModel.xcdatamodeld */; };
 		8ED2CFC818417301004DB31F /* Stores.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2CFC718417301004DB31F /* Stores.m */; };
 		8ED2CFCB18417389004DB31F /* AllStoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2CFCA18417389004DB31F /* AllStoresViewController.m */; };
+		8ED2CFCE18417542004DB31F /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2CFCD18417542004DB31F /* WebViewController.m */; };
+		8ED2CFD018417572004DB31F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED2CFCF18417572004DB31F /* CoreData.framework */; };
+		8ED2CFD21841757D004DB31F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED2CFD11841757D004DB31F /* CoreLocation.framework */; };
+		8ED2CFD418417586004DB31F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED2CFD318417586004DB31F /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,11 @@
 		8ED2CFC718417301004DB31F /* Stores.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Stores.m; path = "../MobileMakers/PostMobileMakersInterviews/BottleRocket App w. Storyboard & ARC/Stores.m"; sourceTree = "<group>"; };
 		8ED2CFC918417389004DB31F /* AllStoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllStoresViewController.h; sourceTree = SOURCE_ROOT; };
 		8ED2CFCA18417389004DB31F /* AllStoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllStoresViewController.m; sourceTree = SOURCE_ROOT; };
+		8ED2CFCC18417542004DB31F /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = SOURCE_ROOT; };
+		8ED2CFCD18417542004DB31F /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = SOURCE_ROOT; };
+		8ED2CFCF18417572004DB31F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		8ED2CFD11841757D004DB31F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8ED2CFD318417586004DB31F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +77,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ED2CFD418417586004DB31F /* MapKit.framework in Frameworks */,
+				8ED2CFD21841757D004DB31F /* CoreLocation.framework in Frameworks */,
+				8ED2CFD018417572004DB31F /* CoreData.framework in Frameworks */,
 				8ED2CF8E18416F2A004DB31F /* CoreGraphics.framework in Frameworks */,
 				8ED2CF9018416F2A004DB31F /* UIKit.framework in Frameworks */,
 				8ED2CF8C18416F2A004DB31F /* Foundation.framework in Frameworks */,
@@ -109,6 +121,9 @@
 		8ED2CF8A18416F2A004DB31F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8ED2CFD318417586004DB31F /* MapKit.framework */,
+				8ED2CFD11841757D004DB31F /* CoreLocation.framework */,
+				8ED2CFCF18417572004DB31F /* CoreData.framework */,
 				8ED2CF8B18416F2A004DB31F /* Foundation.framework */,
 				8ED2CF8D18416F2A004DB31F /* CoreGraphics.framework */,
 				8ED2CF8F18416F2A004DB31F /* UIKit.framework */,
@@ -187,6 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				8ED2CF9D18416F2A004DB31F /* Main.storyboard */,
+				8ED2CFCC18417542004DB31F /* WebViewController.h */,
+				8ED2CFCD18417542004DB31F /* WebViewController.m */,
 			);
 			name = Views;
 			path = ../../../../Views;
@@ -290,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8ED2CFCB18417389004DB31F /* AllStoresViewController.m in Sources */,
+				8ED2CFCE18417542004DB31F /* WebViewController.m in Sources */,
 				8ED2CFA218416F2A004DB31F /* StoreDetailsViewController.m in Sources */,
 				8ED2CFC518417227004DB31F /* StoreModel.xcdatamodeld in Sources */,
 				8ED2CFC818417301004DB31F /* Stores.m in Sources */,
