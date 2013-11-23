@@ -1,0 +1,533 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8ED2CF8C18416F2A004DB31F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED2CF8B18416F2A004DB31F /* Foundation.framework */; };
+		8ED2CF8E18416F2A004DB31F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED2CF8D18416F2A004DB31F /* CoreGraphics.framework */; };
+		8ED2CF9018416F2A004DB31F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED2CF8F18416F2A004DB31F /* UIKit.framework */; };
+		8ED2CF9618416F2A004DB31F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8ED2CF9418416F2A004DB31F /* InfoPlist.strings */; };
+		8ED2CF9818416F2A004DB31F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2CF9718416F2A004DB31F /* main.m */; };
+		8ED2CF9C18416F2A004DB31F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2CF9B18416F2A004DB31F /* AppDelegate.m */; };
+		8ED2CF9F18416F2A004DB31F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ED2CF9D18416F2A004DB31F /* Main.storyboard */; };
+		8ED2CFA218416F2A004DB31F /* StoreDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2CFA118416F2A004DB31F /* StoreDetailsViewController.m */; };
+		8ED2CFA418416F2A004DB31F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ED2CFA318416F2A004DB31F /* Images.xcassets */; };
+		8ED2CFAB18416F2B004DB31F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED2CFAA18416F2B004DB31F /* XCTest.framework */; };
+		8ED2CFAC18416F2B004DB31F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED2CF8B18416F2A004DB31F /* Foundation.framework */; };
+		8ED2CFAD18416F2B004DB31F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED2CF8F18416F2A004DB31F /* UIKit.framework */; };
+		8ED2CFB518416F2B004DB31F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8ED2CFB318416F2B004DB31F /* InfoPlist.strings */; };
+		8ED2CFB718416F2B004DB31F /* BottleRocket_App_w__Storyboard___ARCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2CFB618416F2B004DB31F /* BottleRocket_App_w__Storyboard___ARCTests.m */; };
+		8ED2CFC518417227004DB31F /* StoreModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2CFC318417227004DB31F /* StoreModel.xcdatamodeld */; };
+		8ED2CFC818417301004DB31F /* Stores.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2CFC718417301004DB31F /* Stores.m */; };
+		8ED2CFCB18417389004DB31F /* AllStoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2CFCA18417389004DB31F /* AllStoresViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8ED2CFAE18416F2B004DB31F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8ED2CF8018416F2A004DB31F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8ED2CF8718416F2A004DB31F;
+			remoteInfo = "BottleRocket App w. Storyboard & ARC";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8ED2CF8818416F2A004DB31F /* BottleRocket App w. Storyboard & ARC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BottleRocket App w. Storyboard & ARC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8ED2CF8B18416F2A004DB31F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8ED2CF8D18416F2A004DB31F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8ED2CF8F18416F2A004DB31F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8ED2CF9318416F2A004DB31F /* BottleRocket App w. Storyboard & ARC-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BottleRocket App w. Storyboard & ARC-Info.plist"; sourceTree = "<group>"; };
+		8ED2CF9518416F2A004DB31F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8ED2CF9718416F2A004DB31F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8ED2CF9918416F2A004DB31F /* BottleRocket App w. Storyboard & ARC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BottleRocket App w. Storyboard & ARC-Prefix.pch"; sourceTree = "<group>"; };
+		8ED2CF9A18416F2A004DB31F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "../MobileMakers/PostMobileMakersInterviews/BottleRocket App w. Storyboard & ARC/BottleRocket App w. Storyboard & ARC/AppDelegate.h"; sourceTree = "<group>"; };
+		8ED2CF9B18416F2A004DB31F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = "../MobileMakers/PostMobileMakersInterviews/BottleRocket App w. Storyboard & ARC/BottleRocket App w. Storyboard & ARC/AppDelegate.m"; sourceTree = "<group>"; };
+		8ED2CF9E18416F2A004DB31F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8ED2CFA018416F2A004DB31F /* StoreDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = StoreDetailsViewController.h; path = "../MobileMakers/PostMobileMakersInterviews/BottleRocket App w. Storyboard & ARC/BottleRocket App w. Storyboard & ARC/StoreDetailsViewController.h"; sourceTree = "<group>"; };
+		8ED2CFA118416F2A004DB31F /* StoreDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = StoreDetailsViewController.m; path = "../MobileMakers/PostMobileMakersInterviews/BottleRocket App w. Storyboard & ARC/BottleRocket App w. Storyboard & ARC/StoreDetailsViewController.m"; sourceTree = "<group>"; };
+		8ED2CFA318416F2A004DB31F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8ED2CFA918416F2B004DB31F /* BottleRocket App w. Storyboard & ARCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BottleRocket App w. Storyboard & ARCTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8ED2CFAA18416F2B004DB31F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		8ED2CFB218416F2B004DB31F /* BottleRocket App w. Storyboard & ARCTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BottleRocket App w. Storyboard & ARCTests-Info.plist"; sourceTree = "<group>"; };
+		8ED2CFB418416F2B004DB31F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8ED2CFB618416F2B004DB31F /* BottleRocket_App_w__Storyboard___ARCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BottleRocket_App_w__Storyboard___ARCTests.m"; sourceTree = "<group>"; };
+		8ED2CFC418417227004DB31F /* StoreModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StoreModel.xcdatamodel; sourceTree = "<group>"; };
+		8ED2CFC618417301004DB31F /* Stores.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Stores.h; path = "../MobileMakers/PostMobileMakersInterviews/BottleRocket App w. Storyboard & ARC/Stores.h"; sourceTree = "<group>"; };
+		8ED2CFC718417301004DB31F /* Stores.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Stores.m; path = "../MobileMakers/PostMobileMakersInterviews/BottleRocket App w. Storyboard & ARC/Stores.m"; sourceTree = "<group>"; };
+		8ED2CFC918417389004DB31F /* AllStoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllStoresViewController.h; sourceTree = SOURCE_ROOT; };
+		8ED2CFCA18417389004DB31F /* AllStoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllStoresViewController.m; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8ED2CF8518416F2A004DB31F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8ED2CF8E18416F2A004DB31F /* CoreGraphics.framework in Frameworks */,
+				8ED2CF9018416F2A004DB31F /* UIKit.framework in Frameworks */,
+				8ED2CF8C18416F2A004DB31F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8ED2CFA618416F2B004DB31F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8ED2CFAB18416F2B004DB31F /* XCTest.framework in Frameworks */,
+				8ED2CFAD18416F2B004DB31F /* UIKit.framework in Frameworks */,
+				8ED2CFAC18416F2B004DB31F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8ED2CF7F18416F2A004DB31F = {
+			isa = PBXGroup;
+			children = (
+				8ED2CF9118416F2A004DB31F /* BottleRocket App w. Storyboard & ARC */,
+				8ED2CFB018416F2B004DB31F /* BottleRocket App w. Storyboard & ARCTests */,
+				8ED2CF8A18416F2A004DB31F /* Frameworks */,
+				8ED2CF8918416F2A004DB31F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8ED2CF8918416F2A004DB31F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8ED2CF8818416F2A004DB31F /* BottleRocket App w. Storyboard & ARC.app */,
+				8ED2CFA918416F2B004DB31F /* BottleRocket App w. Storyboard & ARCTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8ED2CF8A18416F2A004DB31F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8ED2CF8B18416F2A004DB31F /* Foundation.framework */,
+				8ED2CF8D18416F2A004DB31F /* CoreGraphics.framework */,
+				8ED2CF8F18416F2A004DB31F /* UIKit.framework */,
+				8ED2CFAA18416F2B004DB31F /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8ED2CF9118416F2A004DB31F /* BottleRocket App w. Storyboard & ARC */ = {
+			isa = PBXGroup;
+			children = (
+				8ED2CFC0184171D6004DB31F /* Controllers */,
+				8ED2CFC1184171D6004DB31F /* Model */,
+				8ED2CFC2184171D6004DB31F /* Views */,
+				8ED2CFA318416F2A004DB31F /* Images.xcassets */,
+				8ED2CF9218416F2A004DB31F /* Supporting Files */,
+			);
+			path = "BottleRocket App w. Storyboard & ARC";
+			sourceTree = "<group>";
+		};
+		8ED2CF9218416F2A004DB31F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8ED2CF9318416F2A004DB31F /* BottleRocket App w. Storyboard & ARC-Info.plist */,
+				8ED2CF9418416F2A004DB31F /* InfoPlist.strings */,
+				8ED2CF9718416F2A004DB31F /* main.m */,
+				8ED2CF9918416F2A004DB31F /* BottleRocket App w. Storyboard & ARC-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8ED2CFB018416F2B004DB31F /* BottleRocket App w. Storyboard & ARCTests */ = {
+			isa = PBXGroup;
+			children = (
+				8ED2CFB618416F2B004DB31F /* BottleRocket_App_w__Storyboard___ARCTests.m */,
+				8ED2CFB118416F2B004DB31F /* Supporting Files */,
+			);
+			path = "BottleRocket App w. Storyboard & ARCTests";
+			sourceTree = "<group>";
+		};
+		8ED2CFB118416F2B004DB31F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8ED2CFB218416F2B004DB31F /* BottleRocket App w. Storyboard & ARCTests-Info.plist */,
+				8ED2CFB318416F2B004DB31F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8ED2CFC0184171D6004DB31F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8ED2CF9A18416F2A004DB31F /* AppDelegate.h */,
+				8ED2CF9B18416F2A004DB31F /* AppDelegate.m */,
+				8ED2CFC918417389004DB31F /* AllStoresViewController.h */,
+				8ED2CFCA18417389004DB31F /* AllStoresViewController.m */,
+				8ED2CFA018416F2A004DB31F /* StoreDetailsViewController.h */,
+				8ED2CFA118416F2A004DB31F /* StoreDetailsViewController.m */,
+			);
+			name = Controllers;
+			path = ../../../../Controllers;
+			sourceTree = "<group>";
+		};
+		8ED2CFC1184171D6004DB31F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8ED2CFC618417301004DB31F /* Stores.h */,
+				8ED2CFC718417301004DB31F /* Stores.m */,
+				8ED2CFC318417227004DB31F /* StoreModel.xcdatamodeld */,
+			);
+			name = Model;
+			path = ../../../../Model;
+			sourceTree = "<group>";
+		};
+		8ED2CFC2184171D6004DB31F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8ED2CF9D18416F2A004DB31F /* Main.storyboard */,
+			);
+			name = Views;
+			path = ../../../../Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8ED2CF8718416F2A004DB31F /* BottleRocket App w. Storyboard & ARC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8ED2CFBA18416F2B004DB31F /* Build configuration list for PBXNativeTarget "BottleRocket App w. Storyboard & ARC" */;
+			buildPhases = (
+				8ED2CF8418416F2A004DB31F /* Sources */,
+				8ED2CF8518416F2A004DB31F /* Frameworks */,
+				8ED2CF8618416F2A004DB31F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BottleRocket App w. Storyboard & ARC";
+			productName = "BottleRocket App w. Storyboard & ARC";
+			productReference = 8ED2CF8818416F2A004DB31F /* BottleRocket App w. Storyboard & ARC.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8ED2CFA818416F2B004DB31F /* BottleRocket App w. Storyboard & ARCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8ED2CFBD18416F2B004DB31F /* Build configuration list for PBXNativeTarget "BottleRocket App w. Storyboard & ARCTests" */;
+			buildPhases = (
+				8ED2CFA518416F2B004DB31F /* Sources */,
+				8ED2CFA618416F2B004DB31F /* Frameworks */,
+				8ED2CFA718416F2B004DB31F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8ED2CFAF18416F2B004DB31F /* PBXTargetDependency */,
+			);
+			name = "BottleRocket App w. Storyboard & ARCTests";
+			productName = "BottleRocket App w. Storyboard & ARCTests";
+			productReference = 8ED2CFA918416F2B004DB31F /* BottleRocket App w. Storyboard & ARCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8ED2CF8018416F2A004DB31F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "John Andrews";
+				TargetAttributes = {
+					8ED2CFA818416F2B004DB31F = {
+						TestTargetID = 8ED2CF8718416F2A004DB31F;
+					};
+				};
+			};
+			buildConfigurationList = 8ED2CF8318416F2A004DB31F /* Build configuration list for PBXProject "BottleRocket App w. Storyboard & ARC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8ED2CF7F18416F2A004DB31F;
+			productRefGroup = 8ED2CF8918416F2A004DB31F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8ED2CF8718416F2A004DB31F /* BottleRocket App w. Storyboard & ARC */,
+				8ED2CFA818416F2B004DB31F /* BottleRocket App w. Storyboard & ARCTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8ED2CF8618416F2A004DB31F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8ED2CFA418416F2A004DB31F /* Images.xcassets in Resources */,
+				8ED2CF9618416F2A004DB31F /* InfoPlist.strings in Resources */,
+				8ED2CF9F18416F2A004DB31F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8ED2CFA718416F2B004DB31F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8ED2CFB518416F2B004DB31F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8ED2CF8418416F2A004DB31F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8ED2CFCB18417389004DB31F /* AllStoresViewController.m in Sources */,
+				8ED2CFA218416F2A004DB31F /* StoreDetailsViewController.m in Sources */,
+				8ED2CFC518417227004DB31F /* StoreModel.xcdatamodeld in Sources */,
+				8ED2CFC818417301004DB31F /* Stores.m in Sources */,
+				8ED2CF9C18416F2A004DB31F /* AppDelegate.m in Sources */,
+				8ED2CF9818416F2A004DB31F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8ED2CFA518416F2B004DB31F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8ED2CFB718416F2B004DB31F /* BottleRocket_App_w__Storyboard___ARCTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8ED2CFAF18416F2B004DB31F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8ED2CF8718416F2A004DB31F /* BottleRocket App w. Storyboard & ARC */;
+			targetProxy = 8ED2CFAE18416F2B004DB31F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8ED2CF9418416F2A004DB31F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8ED2CF9518416F2A004DB31F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8ED2CF9D18416F2A004DB31F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8ED2CF9E18416F2A004DB31F /* Base */,
+			);
+			name = Main.storyboard;
+			path = "../MobileMakers/PostMobileMakersInterviews/BottleRocket App w. Storyboard & ARC/BottleRocket App w. Storyboard & ARC";
+			sourceTree = "<group>";
+		};
+		8ED2CFB318416F2B004DB31F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8ED2CFB418416F2B004DB31F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8ED2CFB818416F2B004DB31F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8ED2CFB918416F2B004DB31F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8ED2CFBB18416F2B004DB31F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BottleRocket App w. Storyboard & ARC/BottleRocket App w. Storyboard & ARC-Prefix.pch";
+				INFOPLIST_FILE = "BottleRocket App w. Storyboard & ARC/BottleRocket App w. Storyboard & ARC-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8ED2CFBC18416F2B004DB31F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BottleRocket App w. Storyboard & ARC/BottleRocket App w. Storyboard & ARC-Prefix.pch";
+				INFOPLIST_FILE = "BottleRocket App w. Storyboard & ARC/BottleRocket App w. Storyboard & ARC-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		8ED2CFBE18416F2B004DB31F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BottleRocket App w. Storyboard & ARC.app/BottleRocket App w. Storyboard & ARC";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BottleRocket App w. Storyboard & ARC/BottleRocket App w. Storyboard & ARC-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BottleRocket App w. Storyboard & ARCTests/BottleRocket App w. Storyboard & ARCTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		8ED2CFBF18416F2B004DB31F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BottleRocket App w. Storyboard & ARC.app/BottleRocket App w. Storyboard & ARC";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BottleRocket App w. Storyboard & ARC/BottleRocket App w. Storyboard & ARC-Prefix.pch";
+				INFOPLIST_FILE = "BottleRocket App w. Storyboard & ARCTests/BottleRocket App w. Storyboard & ARCTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8ED2CF8318416F2A004DB31F /* Build configuration list for PBXProject "BottleRocket App w. Storyboard & ARC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8ED2CFB818416F2B004DB31F /* Debug */,
+				8ED2CFB918416F2B004DB31F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8ED2CFBA18416F2B004DB31F /* Build configuration list for PBXNativeTarget "BottleRocket App w. Storyboard & ARC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8ED2CFBB18416F2B004DB31F /* Debug */,
+				8ED2CFBC18416F2B004DB31F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8ED2CFBD18416F2B004DB31F /* Build configuration list for PBXNativeTarget "BottleRocket App w. Storyboard & ARCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8ED2CFBE18416F2B004DB31F /* Debug */,
+				8ED2CFBF18416F2B004DB31F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8ED2CFC318417227004DB31F /* StoreModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8ED2CFC418417227004DB31F /* StoreModel.xcdatamodel */,
+			);
+			currentVersion = 8ED2CFC418417227004DB31F /* StoreModel.xcdatamodel */;
+			name = StoreModel.xcdatamodeld;
+			path = "../MobileMakers/PostMobileMakersInterviews/BottleRocket App w. Storyboard & ARC/StoreModel.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8ED2CF8018416F2A004DB31F /* Project object */;
+}

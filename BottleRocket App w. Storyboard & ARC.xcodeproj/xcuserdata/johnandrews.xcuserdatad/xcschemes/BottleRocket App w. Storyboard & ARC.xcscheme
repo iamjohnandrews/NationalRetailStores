@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme
+   LastUpgradeVersion = "0500"
+   version = "1.3">
+   <BuildAction
+      parallelizeBuildables = "YES"
+      buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8ED2CF8718416F2A004DB31F"
+               BuildableName = "BottleRocket App w. Storyboard &amp; ARC.app"
+               BlueprintName = "BottleRocket App w. Storyboard &amp; ARC"
+               ReferencedContainer = "container:BottleRocket App w. Storyboard &amp; ARC.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <TestAction
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      buildConfiguration = "Debug">
+      <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8ED2CFA818416F2B004DB31F"
+               BuildableName = "BottleRocket App w. Storyboard &amp; ARCTests.xctest"
+               BlueprintName = "BottleRocket App w. Storyboard &amp; ARCTests"
+               ReferencedContainer = "container:BottleRocket App w. Storyboard &amp; ARC.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "8ED2CF8718416F2A004DB31F"
+            BuildableName = "BottleRocket App w. Storyboard &amp; ARC.app"
+            BlueprintName = "BottleRocket App w. Storyboard &amp; ARC"
+            ReferencedContainer = "container:BottleRocket App w. Storyboard &amp; ARC.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+   </TestAction>
+   <LaunchAction
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      launchStyle = "0"
+      useCustomWorkingDirectory = "NO"
+      buildConfiguration = "Debug"
+      ignoresPersistentStateOnLaunch = "NO"
+      debugDocumentVersioning = "YES"
+      allowLocationSimulation = "YES">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "8ED2CF8718416F2A004DB31F"
+            BuildableName = "BottleRocket App w. Storyboard &amp; ARC.app"
+            BlueprintName = "BottleRocket App w. Storyboard &amp; ARC"
+            ReferencedContainer = "container:BottleRocket App w. Storyboard &amp; ARC.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+      <AdditionalOptions>
+      </AdditionalOptions>
+   </LaunchAction>
+   <ProfileAction
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      savedToolIdentifier = ""
+      useCustomWorkingDirectory = "NO"
+      buildConfiguration = "Release"
+      debugDocumentVersioning = "YES">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "8ED2CF8718416F2A004DB31F"
+            BuildableName = "BottleRocket App w. Storyboard &amp; ARC.app"
+            BlueprintName = "BottleRocket App w. Storyboard &amp; ARC"
+            ReferencedContainer = "container:BottleRocket App w. Storyboard &amp; ARC.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+   </ProfileAction>
+   <AnalyzeAction
+      buildConfiguration = "Debug">
+   </AnalyzeAction>
+   <ArchiveAction
+      buildConfiguration = "Release"
+      revealArchiveInOrganizer = "YES">
+   </ArchiveAction>
+</Scheme>
