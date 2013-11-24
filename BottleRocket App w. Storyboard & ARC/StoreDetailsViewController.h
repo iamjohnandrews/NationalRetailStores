@@ -10,4 +10,28 @@
 
 @interface StoreDetailsViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *storeLogoDisplayImage;
+
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *cityLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *stateLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *zipcodeLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *latitudeLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *longitudeLabel;
+
+@property (weak, nonatomic) IBOutlet UIButton *mapStoreAddressButtonOutlet;
+
+- (IBAction)mapStoreAddressButtonPressed:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIButton *returnUserToAllStoresButtonOutlet;
+
+- (IBAction)returnUserToAllStoresButtonPressed:(id)sender;
+
 @end

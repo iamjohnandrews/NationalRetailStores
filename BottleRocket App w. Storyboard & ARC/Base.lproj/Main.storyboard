@@ -8,18 +8,41 @@
         <scene sceneID="PCh-8h-GuT">
             <objects>
                 <tableViewController id="DDp-4s-UmP" customClass="AllStoresViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Dts-dX-Uc6">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="116" sectionHeaderHeight="22" sectionFooterHeight="22" id="Dts-dX-Uc6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="iqJ-79-Slf">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="116" id="iqJ-79-Slf" customClass="StoreSumDisplayCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="116"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iqJ-79-Slf" id="N2l-50-bqZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kM8-Tc-ABm">
+                                            <rect key="frame" x="0.0" y="0.0" width="236" height="81"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wtv-Kn-R6H">
+                                            <rect key="frame" x="9" y="89" width="113" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="176" translatesAutoresizingMaskIntoConstraints="NO" id="LQF-Cr-Lar">
+                                            <rect key="frame" x="136" y="75" width="176" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="storeAddressLabel" destination="LQF-Cr-Lar" id="7VV-QL-x6o"/>
+                                    <outlet property="storeLogoImage" destination="kM8-Tc-ABm" id="XbB-AS-MWQ"/>
+                                    <outlet property="storePhoneLabel" destination="Wtv-Kn-R6H" id="rjz-DG-R2C"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -156,6 +179,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="returnUserToAllStoresButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mFg-nm-o4e"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEg-Ok-OZw">
                                 <rect key="frame" x="172" y="439" width="128" height="60"/>
@@ -164,6 +190,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="mapStoreAddressButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="EbF-JJ-LiX"/>
                                     <segue destination="5CE-0p-FT9" kind="modal" identifier="StoreDetailsToMapSegue" id="UTf-Vn-j9V"/>
                                 </connections>
                             </button>
@@ -171,6 +198,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="WJo-3p-mSx"/>
+                    <connections>
+                        <outlet property="addressLabel" destination="heb-KG-9be" id="NTV-fh-nTJ"/>
+                        <outlet property="cityLabel" destination="Z37-zY-fOa" id="mNM-Bt-a9J"/>
+                        <outlet property="latitudeLabel" destination="3yt-B0-xPs" id="G3n-m0-ZhH"/>
+                        <outlet property="longitudeLabel" destination="wMz-eI-HU8" id="8kc-Sk-Kzx"/>
+                        <outlet property="mapStoreAddressButtonOutlet" destination="YEg-Ok-OZw" id="8Zd-o2-t5k"/>
+                        <outlet property="phoneLabel" destination="UAs-fr-5Rb" id="Va2-g2-8BK"/>
+                        <outlet property="returnUserToAllStoresButtonOutlet" destination="jwt-XA-eiv" id="a9N-NJ-hiq"/>
+                        <outlet property="stateLabel" destination="LcH-xx-Yzg" id="IpP-re-knz"/>
+                        <outlet property="storeLogoDisplayImage" destination="czd-KB-2gu" id="d7R-tb-kcB"/>
+                        <outlet property="zipcodeLabel" destination="2G1-xm-7jd" id="n0C-qi-cjb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -216,27 +255,46 @@
                                 <rect key="frame" x="0.0" y="475" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Back" id="Jmw-3W-sUb"/>
-                                    <barButtonItem title="Forward" id="qyO-PF-sh9"/>
+                                    <barButtonItem title="Back" id="Jmw-3W-sUb">
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="UgZ-YR-pFt" id="Frg-hr-XGV"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Forward" id="qyO-PF-sh9">
+                                        <connections>
+                                            <action selector="forwardButtonPressed:" destination="UgZ-YR-pFt" id="cJW-BI-pLp"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="vn2-Ih-vK6"/>
-                                    <barButtonItem title="Stop" id="4Fy-kP-iK0"/>
+                                    <barButtonItem title="Stop" id="4Fy-kP-iK0">
+                                        <connections>
+                                            <action selector="stopButonPressed:" destination="UgZ-YR-pFt" id="aSH-Qj-Vwh"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Zqm-Xm-EsG"/>
-                                    <barButtonItem title="Refresh" id="0yW-dT-y00"/>
+                                    <barButtonItem title="Refresh" id="0yW-dT-y00">
+                                        <connections>
+                                            <action selector="refreshButtonPressed:" destination="UgZ-YR-pFt" id="gyc-oF-aPV"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="WebView" id="iMs-lD-G7R"/>
+                    <connections>
+                        <outlet property="appleWebView" destination="CKa-Vr-RiB" id="Lnw-OF-dOP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fn3-4V-k4D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="609" y="375"/>
         </scene>
-        <!--View Controller-->
+        <!--Store Details View Controller-->
         <scene sceneID="tu4-Ba-af7">
             <objects>
-                <viewController id="5CE-0p-FT9" sceneMemberID="viewController">
+                <viewController id="5CE-0p-FT9" customClass="StoreDetailsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IOn-v4-z8f"/>
                         <viewControllerLayoutGuide type="bottom" id="7mh-4X-PcE"/>
@@ -255,6 +313,9 @@
                                 <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="returnUserToAllStoresButtonPressed:" destination="5CE-0p-FT9" eventType="touchUpInside" id="BCV-PY-Z0j"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

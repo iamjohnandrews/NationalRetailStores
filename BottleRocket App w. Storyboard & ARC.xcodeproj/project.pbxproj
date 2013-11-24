@@ -28,6 +28,7 @@
 		8ED2CFD018417572004DB31F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED2CFCF18417572004DB31F /* CoreData.framework */; };
 		8ED2CFD21841757D004DB31F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED2CFD11841757D004DB31F /* CoreLocation.framework */; };
 		8ED2CFD418417586004DB31F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED2CFD318417586004DB31F /* MapKit.framework */; };
+		8ED2CFD71841799E004DB31F /* StoreSumDisplayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2CFD61841799E004DB31F /* StoreSumDisplayCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		8ED2CFCF18417572004DB31F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8ED2CFD11841757D004DB31F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8ED2CFD318417586004DB31F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8ED2CFD51841799E004DB31F /* StoreSumDisplayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreSumDisplayCell.h; sourceTree = SOURCE_ROOT; };
+		8ED2CFD61841799E004DB31F /* StoreSumDisplayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreSumDisplayCell.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +179,8 @@
 		8ED2CFC0184171D6004DB31F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8ED2CFCC18417542004DB31F /* WebViewController.h */,
+				8ED2CFCD18417542004DB31F /* WebViewController.m */,
 				8ED2CF9A18416F2A004DB31F /* AppDelegate.h */,
 				8ED2CF9B18416F2A004DB31F /* AppDelegate.m */,
 				8ED2CFC918417389004DB31F /* AllStoresViewController.h */,
@@ -202,8 +207,8 @@
 			isa = PBXGroup;
 			children = (
 				8ED2CF9D18416F2A004DB31F /* Main.storyboard */,
-				8ED2CFCC18417542004DB31F /* WebViewController.h */,
-				8ED2CFCD18417542004DB31F /* WebViewController.m */,
+				8ED2CFD51841799E004DB31F /* StoreSumDisplayCell.h */,
+				8ED2CFD61841799E004DB31F /* StoreSumDisplayCell.m */,
 			);
 			name = Views;
 			path = ../../../../Views;
@@ -306,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ED2CFD71841799E004DB31F /* StoreSumDisplayCell.m in Sources */,
 				8ED2CFCB18417389004DB31F /* AllStoresViewController.m in Sources */,
 				8ED2CFCE18417542004DB31F /* WebViewController.m in Sources */,
 				8ED2CFA218416F2A004DB31F /* StoreDetailsViewController.m in Sources */,

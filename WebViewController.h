@@ -10,4 +10,14 @@
 
 @interface WebViewController : UIViewController
 
+- (IBAction)backButtonPressed:(id)sender;
+
+- (IBAction)forwardButtonPressed:(id)sender;
+
+- (IBAction)stopButonPressed:(id)sender;
+
+- (IBAction)refreshButtonPressed:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIWebView *appleWebView;
+
 @end
