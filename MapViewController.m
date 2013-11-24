@@ -15,7 +15,7 @@
 @end
 
 @implementation MapViewController
-@synthesize dismissMapViewButtonOutlet, storeLongitude, storeLatitude, storeMapView;
+@synthesize storeLongitude, storeLatitude, storeMapView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,12 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    dismissMapViewButtonOutlet.layer.borderWidth = 2;
-    dismissMapViewButtonOutlet.layer.cornerRadius = 9;
-    dismissMapViewButtonOutlet.layer.borderColor = [[UIColor whiteColor] CGColor];
-    dismissMapViewButtonOutlet.layer.backgroundColor = [[UIColor orangeColor] CGColor];
-    [dismissMapViewButtonOutlet setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+	
     NSLog(@"the corrdinates: latitude = %f, logitude = %f", storeLatitude, storeLongitude);
 }
 
@@ -46,8 +41,4 @@
     
 }
 
-- (IBAction)dismissMapViewButtonPressed:(id)sender
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 @end

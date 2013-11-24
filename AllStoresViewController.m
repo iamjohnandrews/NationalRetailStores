@@ -120,7 +120,7 @@
     
     allRetailStores = fetchResultsController.fetchedObjects;
     
-    NSLog(@"Errors are %@", error);
+    //NSLog(@"Errors are %@", error);
 }
 
 #pragma mark - Table view data source
@@ -157,10 +157,12 @@
     if ([segue.identifier isEqualToString:@"StoreSumToSpecificDetailsSegue"]) {
         StoreDetailsViewController* sdvc = segue.destinationViewController;
         NSIndexPath* path = [self.tableView indexPathForSelectedRow];
-        passThroughDictionary = [allRetailStores objectAtIndex:path.row];
-        sdvc.selectedSpecificStoreDetails = passThroughDictionary;
+        //sdvc.selectedSpecificStoreDetails = [allRetailStores objectAtIndex:path.row];
+        [sdvc fetchFromCoreData:path.row];
+                
+        //addressLabel, cityLabel, latitudeLabel, zipcodeLabel, phoneLabel,longitudeLabel, stateLabel, mapStoreAddressButtonOutlet, storeLogoDisplayImage;
         
-        NSLog(@"getting passed through %@", passThroughDictionary);
+        //NSLog(@"getting passed through %@", );
     }
 }
 

@@ -8,46 +8,66 @@
 
 #import "StoreDetailsViewController.h"
 #import "MapViewController.h"
-#import <CoreData/CoreData.h>//could this be why instance is not recognized?
+#import "Stores.h"
+#import "AppDelegate.h"
 
 @interface StoreDetailsViewController ()
+{
+    NSArray* pulledFromCoreDataArray;
+    NSString* tempString;
+}
 
 @end
 
 @implementation StoreDetailsViewController
-@synthesize selectedSpecificStoreDetails, addressLabel, cityLabel, latitudeLabel, zipcodeLabel, phoneLabel,longitudeLabel, stateLabel, mapStoreAddressButtonOutlet, returnUserToAllStoresButtonOutlet;
+@synthesize selectedSpecificStoreDetails, addressLabel, cityLabel, latitudeLabel, zipcodeLabel, phoneLabel,longitudeLabel, stateLabel, mapStoreAddressButtonOutlet, storeLogoDisplayImage;
 
 - (void)viewDidLoad
 {
-    //NSLog(@"please pass through %@", selectedSpecificStoreDetails);
-    [super viewDidLoad];
-	// Style Buttons
-    returnUserToAllStoresButtonOutlet.layer.borderWidth = 2;
-    returnUserToAllStoresButtonOutlet.layer.cornerRadius = 9;
-    returnUserToAllStoresButtonOutlet.layer.borderColor = [[UIColor darkGrayColor] CGColor];
-    returnUserToAllStoresButtonOutlet.layer.backgroundColor = [[UIColor lightGrayColor] CGColor];
-    [returnUserToAllStoresButtonOutlet setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
+    [super viewDidLoad];
+    /*
+	// Style Button    
     mapStoreAddressButtonOutlet.layer.borderWidth = 2;
     mapStoreAddressButtonOutlet.layer.cornerRadius = 9;
     mapStoreAddressButtonOutlet.layer.borderColor = [[UIColor darkGrayColor] CGColor];
     mapStoreAddressButtonOutlet.layer.backgroundColor = [[UIColor lightGrayColor] CGColor];
     [mapStoreAddressButtonOutlet setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    
+    */
     //Assign Store Values 
-
+    //UIImage* image = [UIImage imageNamed:[selectedSpecificStoreDetails objectForKey:@"storeLogoURL"]];
+    //[self.storeLogoDisplayImage setImage:image];
+    addressLabel.text = tempString;
 }
 
-
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)fetchFromCoreData:(NSInteger)selectedRow
 {
-    if ([segue.identifier isEqualToString:@"StoreDetailsToMapSegue"]) {
-        MapViewController* mapView = [[MapViewController alloc] init];
-        mapView.storeLatitude = [latitudeLabel.text floatValue];
-        mapView.storeLongitude = [longitudeLabel.text floatValue];
-        //NSLog(@"the corrdinates: latitude = %f, logitude = %f", mapView.storeLatitude, mapView.storeLongitude);
-    }    
+    //Fetch from Core Data
+    NSManagedObjectContext* moc = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+    NSEntityDescription* entityDescription = [NSEntityDescription entityForName:@"Stores" inManagedObjectContext:moc];
+    NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] init];
+    NSFetchedResultsController* fetchResultsController;
+    NSError* error;
+    NSSortDescriptor* sortDescriptor;
+    NSArray* sortDescriptors;
+    sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"address" ascending:YES];
+    sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    
+    fetchRequest.entity = entityDescription;
+    fetchRequest.sortDescriptors = sortDescriptors;
+    fetchResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:moc sectionNameKeyPath:nil cacheName:nil];
+    [fetchResultsController performFetch:&error];
+    
+    pulledFromCoreDataArray = fetchResultsController.fetchedObjects;
+    
+    Stores* stores = [pulledFromCoreDataArray objectAtIndex:selectedRow];
+    
+    NSURL *url = [NSURL URLWithString:stores.storeLogoURL];
+    NSData *imageData  = [NSData dataWithContentsOfURL:url];
+    NSLog(@"the stores number is %@", stores.phone);
+    tempString = stores.phone ;
+    addressLabel.text = stores.address;
+    storeLogoDisplayImage.image = [UIImage imageWithData:imageData];
 }
 
 - (IBAction)mapStoreAddressButtonPressed:(id)sender 
@@ -55,9 +75,4 @@
     
 }
 
-- (IBAction)returnUserToAllStoresButtonPressed:(id)sender 
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
-}
 @end

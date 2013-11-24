@@ -28,16 +28,10 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *longitudeLabel;
 
-
-
 @property (weak, nonatomic) IBOutlet UIButton *mapStoreAddressButtonOutlet;
 
 - (IBAction)mapStoreAddressButtonPressed:(id)sender;
 
-@property (weak, nonatomic) IBOutlet UIButton *returnUserToAllStoresButtonOutlet;
-
-- (IBAction)returnUserToAllStoresButtonPressed:(id)sender;
-
-
+- (void)fetchFromCoreData:(NSInteger)selectedRow;
 
 @end

@@ -12,11 +12,6 @@
 
 @interface MapViewController : UIViewController
 
-
-@property (weak, nonatomic) IBOutlet UIButton *dismissMapViewButtonOutlet;
-
-- (IBAction)dismissMapViewButtonPressed:(id)sender;
-
 @property (weak, nonatomic) IBOutlet MKMapView *storeMapView;
 
 @property float storeLatitude;
