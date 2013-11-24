@@ -29,6 +29,7 @@
 		8ED2CFD21841757D004DB31F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED2CFD11841757D004DB31F /* CoreLocation.framework */; };
 		8ED2CFD418417586004DB31F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED2CFD318417586004DB31F /* MapKit.framework */; };
 		8ED2CFD71841799E004DB31F /* StoreSumDisplayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2CFD61841799E004DB31F /* StoreSumDisplayCell.m */; };
+		8ED2CFDA1841A6DB004DB31F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2CFD91841A6DB004DB31F /* MapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		8ED2CFD318417586004DB31F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8ED2CFD51841799E004DB31F /* StoreSumDisplayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreSumDisplayCell.h; sourceTree = SOURCE_ROOT; };
 		8ED2CFD61841799E004DB31F /* StoreSumDisplayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreSumDisplayCell.m; sourceTree = SOURCE_ROOT; };
+		8ED2CFD81841A6DB004DB31F /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = SOURCE_ROOT; };
+		8ED2CFD91841A6DB004DB31F /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +190,8 @@
 				8ED2CFCA18417389004DB31F /* AllStoresViewController.m */,
 				8ED2CFA018416F2A004DB31F /* StoreDetailsViewController.h */,
 				8ED2CFA118416F2A004DB31F /* StoreDetailsViewController.m */,
+				8ED2CFD81841A6DB004DB31F /* MapViewController.h */,
+				8ED2CFD91841A6DB004DB31F /* MapViewController.m */,
 			);
 			name = Controllers;
 			path = ../../../../Controllers;
@@ -314,6 +319,7 @@
 				8ED2CFD71841799E004DB31F /* StoreSumDisplayCell.m in Sources */,
 				8ED2CFCB18417389004DB31F /* AllStoresViewController.m in Sources */,
 				8ED2CFCE18417542004DB31F /* WebViewController.m in Sources */,
+				8ED2CFDA1841A6DB004DB31F /* MapViewController.m in Sources */,
 				8ED2CFA218416F2A004DB31F /* StoreDetailsViewController.m in Sources */,
 				8ED2CFC518417227004DB31F /* StoreModel.xcdatamodeld in Sources */,
 				8ED2CFC818417301004DB31F /* Stores.m in Sources */,

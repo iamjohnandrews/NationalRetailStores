@@ -7,13 +7,46 @@
 //
 
 #import "AppDelegate.h"
+#import <CoreData/CoreData.h>
+
+
 
 @implementation AppDelegate
+
+{
+    NSManagedObjectContext* moc;
+}
+
+- (NSManagedObjectContext *)managedObjectContext;
+{
+    return moc;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [self setupCoreData];
     return YES;
+}
+
+- (void)setupCoreData
+{
+    NSManagedObjectModel* mom;
+    NSPersistentStoreCoordinator* persistentStoreCoordinator;
+    
+    
+    NSURL* documentsDirectoryURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    NSURL* modelURL = [[NSBundle mainBundle] URLForResource:@"StoreModel" withExtension:@"momd"];
+    NSURL* sqliteURL = [documentsDirectoryURL URLByAppendingPathComponent:@"Model.sqlite"];
+    
+    mom = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
+    
+    if ([persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:sqliteURL options:nil error:nil]) {
+        moc = [[NSManagedObjectContext alloc] init];
+        [moc setPersistentStoreCoordinator:persistentStoreCoordinator];
+    }
+    
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

@@ -7,64 +7,174 @@
 //
 
 #import "AllStoresViewController.h"
+#import "AppDelegate.h"
+#import "Stores.h"
+#import "StoreDetailsViewController.h"
+#import "StoreSumDisplayCell.h"
+
 
 @interface AllStoresViewController ()
-
+{
+    NSDictionary* dictionaryOuterLayer1;
+    NSArray* arrayMidleLayer2;
+    NSDictionary* dictionaryInnerLayer3;
+    
+    NSArray* allRetailStores;
+    NSDictionary* passThroughDictionary;
+    
+    NSFileManager *fileManager;
+    NSURL *documentsDirectory;
+}
 @end
 
 @implementation AllStoresViewController
+@synthesize storeSummariesTableView;
 
-- (id)initWithStyle:(UITableViewStyle)style
+-(id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
+    if (self = [super initWithCoder:aDecoder]) {
+        fileManager = [NSFileManager defaultManager];
+        documentsDirectory = [[fileManager URLsForDirectory:NSDocumentDirectory
+                                                  inDomains:NSUserDomainMask] lastObject];
     }
     return self;
 }
 
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSManagedObjectContext* moc = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+    
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"hasData"])
+    {
+        NSURLRequest* urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://strong-earth-32.heroku.com/stores.aspx"]];
+        
+        [NSURLConnection sendAsynchronousRequest:urlRequest
+                                           queue:[NSOperationQueue currentQueue]
+                               completionHandler:
+         ^(NSURLResponse* response, NSData* data, NSError* error)
+         {
+             dictionaryOuterLayer1 = [NSJSONSerialization JSONObjectWithData:data
+                                                                 options:0
+                                                                   error:&error];
+             arrayMidleLayer2 = [[NSArray alloc] initWithArray:[dictionaryOuterLayer1 objectForKey:@"stores"]];
+             
+             for (dictionaryInnerLayer3 in arrayMidleLayer2) {
+                 NSURL *url = [NSURL URLWithString:[dictionaryInnerLayer3 valueForKey:@"storeLogoURL"]];
+                 NSString *imageFileName = [[url pathComponents] lastObject];
+                 NSURL *localImageUrl = [documentsDirectory URLByAppendingPathComponent:imageFileName];
+                 
+                 NSData *imageData  = [NSData dataWithContentsOfURL:url];
+                 [imageData writeToURL:localImageUrl atomically:YES];
+                 
+                 //Below is where you connect with core data
+                 Stores* stores = [NSEntityDescription insertNewObjectForEntityForName:@"Stores" inManagedObjectContext:moc]; //this is the line that puts new hero into CoreData
+                 stores.address = [dictionaryInnerLayer3 objectForKey:@"address"];
+                 stores.city = [dictionaryInnerLayer3 objectForKey:@"city"];
+                 stores.name = [dictionaryInnerLayer3 objectForKey:@"name"];
+                 stores.latitude = [dictionaryInnerLayer3 objectForKey:@"latitude"];
+                 stores.zipcode = [dictionaryInnerLayer3 objectForKey:@"zipcode"];
+                 stores.phone = [dictionaryInnerLayer3 objectForKey:@"phone"];
+                 stores.longitude = [dictionaryInnerLayer3 objectForKey:@"longitude"];
+                 stores.storeID = [dictionaryInnerLayer3 objectForKey:@"storeID"];
+                 stores.state = [dictionaryInnerLayer3 objectForKey:@"state"];
+                 stores.storeLogoURL = localImageUrl.absoluteString;
+             }
+             
+             NSError* superBadError;
+             if (![moc save:&superBadError]) { //where you save to core data
+                 NSLog(@"Failed to save because %@", superBadError);
+             }
+             
+             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hasData"];
+             [[NSUserDefaults standardUserDefaults] synchronize];
+             
+             [self fetchFromCoreData];
+             [storeSummariesTableView reloadData];
+         }];
+        
+    }
+    else{
+        [self fetchFromCoreData];
+    }
 }
 
-- (void)didReceiveMemoryWarning
+- (void)fetchFromCoreData //where you load data
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSManagedObjectContext* moc = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+    NSEntityDescription* entityDescription = [NSEntityDescription entityForName:@"Stores" inManagedObjectContext:moc];
+    NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] init];
+    NSFetchedResultsController* fetchResultsController;
+    NSError* error;
+    NSSortDescriptor* sortDescriptor;
+    NSArray* sortDescriptors;
+    sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"address" ascending:YES];
+    sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    
+    fetchRequest.entity = entityDescription;
+    fetchRequest.sortDescriptors = sortDescriptors;
+    fetchResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:moc sectionNameKeyPath:nil cacheName:nil];
+    [fetchResultsController performFetch:&error];
+    
+    allRetailStores = fetchResultsController.fetchedObjects;
+    
+    NSLog(@"Errors are %@", error);
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return allRetailStores.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    StoreSumDisplayCell* cell = [tableView dequeueReusableCellWithIdentifier:@"StoreSummary" forIndexPath:indexPath];
+    Stores* stores = [allRetailStores objectAtIndex:indexPath.row];
     
-    // Configure the cell...
+    NSURL *url = [NSURL URLWithString:stores.storeLogoURL];
+    NSData *imageData  = [NSData dataWithContentsOfURL:url];
+    
+    cell.storePhoneLabel.text = stores.phone ;
+    cell.storeAddressLabel.text =[NSString stringWithFormat:@"%@ %@, %@",stores.address, stores.city, stores.state];
+    cell.storeLogoImage.image = [UIImage imageWithData:imageData];
     
     return cell;
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"StoreSumToSpecificDetailsSegue"]) {
+        //StoreDetailsViewController* storeDetails = segue.destinationViewController; //Not needed
+        NSIndexPath* path = [self.tableView indexPathForSelectedRow];
+        
+        /*
+        //set label values
+        storeDetails.addressLabel.text = [[allRetailStores objectAtIndex:path.row] objectForKey:@"address"];
+        storeDetails.cityLabel.text = [[allRetailStores objectAtIndex:path.row] objectForKey:@"city"];
+        storeDetails.latitudeLabel.text = [[allRetailStores objectAtIndex:path.row] objectForKey:@"latitude"];
+        storeDetails.zipcodeLabel.text = [[allRetailStores objectAtIndex:path.row] objectForKey:@"zipcode"];
+        storeDetails.phoneLabel.text = [[allRetailStores objectAtIndex:path.row] objectForKey:@"phone"];
+        storeDetails.longitudeLabel.text = [[allRetailStores objectAtIndex:path.row] objectForKey:@"longitude"];
+        storeDetails.stateLabel.text = [[allRetailStores objectAtIndex:path.row] objectForKey:@"state"];
+        doesnt work
+         */ 
+        
+        //storeDetails.selectedSpecificStoreDetails = [allRetailStores objectAtIndex:path.row];
+        NSLog(@"moving onto the next round %@", [allRetailStores objectAtIndex:path.row]);   
+    }    
+}
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -72,6 +182,15 @@
 {
     // Return NO if you do not want the specified item to be editable.
     return YES;
+ 
+ addressLabel.text = [selectedSpecificStoreDetails objectForKey:@"address"];
+ cityLabel.text = [selectedSpecificStoreDetails objectForKey:@"city"];
+ latitudeLabel.text = @"41.8819"; //[selectedSpecificStoreDetails objectForKey:@"latitude"];
+ zipcodeLabel.text = [selectedSpecificStoreDetails objectForKey:@"zipcode"];
+ phoneLabel.text = [selectedSpecificStoreDetails objectForKey:@"phone"];
+ longitudeLabel.text = @"-87.6278";//[selectedSpecificStoreDetails objectForKey:@"longitude"];
+ stateLabel.text = [selectedSpecificStoreDetails objectForKey:@"state"]; 
+ 
 }
 */
 
@@ -105,16 +224,5 @@
 }
 */
 
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
- */
 
 @end

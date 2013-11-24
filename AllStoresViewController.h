@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AllStoresViewController : UITableViewController
+@interface AllStoresViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (strong, nonatomic) IBOutlet UITableView *storeSummariesTableView;
 
 @end

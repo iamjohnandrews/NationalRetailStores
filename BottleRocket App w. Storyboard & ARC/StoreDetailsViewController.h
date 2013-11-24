@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface StoreDetailsViewController : UIViewController
+@property (nonatomic, assign) id delegate;
+@property NSDictionary* selectedSpecificStoreDetails;
 
 @property (weak, nonatomic) IBOutlet UIImageView *storeLogoDisplayImage;
 
@@ -26,6 +28,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *longitudeLabel;
 
+
+
 @property (weak, nonatomic) IBOutlet UIButton *mapStoreAddressButtonOutlet;
 
 - (IBAction)mapStoreAddressButtonPressed:(id)sender;
@@ -33,5 +37,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *returnUserToAllStoresButtonOutlet;
 
 - (IBAction)returnUserToAllStoresButtonPressed:(id)sender;
+
+
 
 @end
