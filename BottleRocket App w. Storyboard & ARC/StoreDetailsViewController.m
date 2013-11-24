@@ -14,7 +14,15 @@
 @interface StoreDetailsViewController ()
 {
     NSArray* pulledFromCoreDataArray;
+    NSData *imageData;
+    
     NSString* tempString;
+    NSString* tempString2;
+    NSString* tempString3;
+    NSString* tempString4;
+    NSString* tempString5;
+    NSString* tempString6;
+    NSString* tempString7;
 }
 
 @end
@@ -26,18 +34,23 @@
 {
     
     [super viewDidLoad];
-    /*
+    
 	// Style Button    
     mapStoreAddressButtonOutlet.layer.borderWidth = 2;
     mapStoreAddressButtonOutlet.layer.cornerRadius = 9;
     mapStoreAddressButtonOutlet.layer.borderColor = [[UIColor darkGrayColor] CGColor];
-    mapStoreAddressButtonOutlet.layer.backgroundColor = [[UIColor lightGrayColor] CGColor];
+    mapStoreAddressButtonOutlet.layer.backgroundColor = [[UIColor orangeColor] CGColor];
     [mapStoreAddressButtonOutlet setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    */
+    
     //Assign Store Values 
-    //UIImage* image = [UIImage imageNamed:[selectedSpecificStoreDetails objectForKey:@"storeLogoURL"]];
-    //[self.storeLogoDisplayImage setImage:image];
-    addressLabel.text = tempString;
+    storeLogoDisplayImage.image = [UIImage imageWithData:imageData];
+    phoneLabel.text = tempString;
+    addressLabel.text = tempString2;
+    cityLabel.text = tempString3;
+    stateLabel.text = tempString4;
+    zipcodeLabel.text = tempString5;
+    latitudeLabel.text = tempString6;
+    longitudeLabel.text = tempString7;
 }
 
 - (void)fetchFromCoreData:(NSInteger)selectedRow
@@ -63,16 +76,29 @@
     Stores* stores = [pulledFromCoreDataArray objectAtIndex:selectedRow];
     
     NSURL *url = [NSURL URLWithString:stores.storeLogoURL];
-    NSData *imageData  = [NSData dataWithContentsOfURL:url];
-    NSLog(@"the stores number is %@", stores.phone);
+    imageData  = [NSData dataWithContentsOfURL:url];
+    
     tempString = stores.phone ;
-    addressLabel.text = stores.address;
-    storeLogoDisplayImage.image = [UIImage imageWithData:imageData];
+    tempString2 = stores.address;
+    tempString3 = stores.city;
+    tempString4 = stores.state;
+    tempString5 = stores.zipcode;
+    tempString6 = stores.latitude;
+    tempString7 = stores.longitude;    
 }
 
 - (IBAction)mapStoreAddressButtonPressed:(id)sender 
 {
-    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"StoreDetailsToMapSegue"]) {
+        MapViewController* mvc = segue.destinationViewController;
+        mvc.storeLatitude = [latitudeLabel.text floatValue];
+        mvc.storeLongitude = [tempString7 floatValue];
+    }
+        
 }
 
 @end
