@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface StoreDetailsViewController : UIViewController
-@property (nonatomic, assign) id delegate;
+
 @property NSDictionary* selectedSpecificStoreDetails;
 
 @property (weak, nonatomic) IBOutlet UIImageView *storeLogoDisplayImage;

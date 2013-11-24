@@ -155,26 +155,14 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"StoreSumToSpecificDetailsSegue"]) {
-        //StoreDetailsViewController* storeDetails = segue.destinationViewController; //Not needed
+        StoreDetailsViewController* sdvc = segue.destinationViewController;
         NSIndexPath* path = [self.tableView indexPathForSelectedRow];
+        passThroughDictionary = [allRetailStores objectAtIndex:path.row];
+        sdvc.selectedSpecificStoreDetails = passThroughDictionary;
         
-        /*
-        //set label values
-        storeDetails.addressLabel.text = [[allRetailStores objectAtIndex:path.row] objectForKey:@"address"];
-        storeDetails.cityLabel.text = [[allRetailStores objectAtIndex:path.row] objectForKey:@"city"];
-        storeDetails.latitudeLabel.text = [[allRetailStores objectAtIndex:path.row] objectForKey:@"latitude"];
-        storeDetails.zipcodeLabel.text = [[allRetailStores objectAtIndex:path.row] objectForKey:@"zipcode"];
-        storeDetails.phoneLabel.text = [[allRetailStores objectAtIndex:path.row] objectForKey:@"phone"];
-        storeDetails.longitudeLabel.text = [[allRetailStores objectAtIndex:path.row] objectForKey:@"longitude"];
-        storeDetails.stateLabel.text = [[allRetailStores objectAtIndex:path.row] objectForKey:@"state"];
-        doesnt work
-         */ 
-        
-        //storeDetails.selectedSpecificStoreDetails = [allRetailStores objectAtIndex:path.row];
-        NSLog(@"moving onto the next round %@", [allRetailStores objectAtIndex:path.row]);   
-    }    
+        NSLog(@"getting passed through %@", passThroughDictionary);
+    }
 }
-
 
 /*
 // Override to support conditional editing of the table view.
