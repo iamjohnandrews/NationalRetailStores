@@ -23,6 +23,7 @@
     NSString* tempString5;
     NSString* tempString6;
     NSString* tempString7;
+    NSString* tempString8;
 }
 
 @end
@@ -84,7 +85,8 @@
     tempString4 = stores.state;
     tempString5 = stores.zipcode;
     tempString6 = stores.latitude;
-    tempString7 = stores.longitude;    
+    tempString7 = stores.longitude;  
+    tempString8 = stores.name;
 }
 
 - (IBAction)mapStoreAddressButtonPressed:(id)sender 
@@ -95,8 +97,9 @@
 {
     if ([segue.identifier isEqualToString:@"StoreDetailsToMapSegue"]) {
         MapViewController* mvc = segue.destinationViewController;
-        mvc.storeLatitude = [latitudeLabel.text floatValue];
+        mvc.storeLatitude = [tempString6 floatValue];
         mvc.storeLongitude = [tempString7 floatValue];
+        mvc.storename = tempString8;
     }
         
 }

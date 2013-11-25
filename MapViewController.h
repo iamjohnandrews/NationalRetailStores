@@ -18,4 +18,6 @@
 
 @property float storeLongitude;
 
+@property NSString* storename;
+
 @end

@@ -15,7 +15,7 @@
 @end
 
 @implementation MapViewController
-@synthesize storeLongitude, storeLatitude, storeMapView;
+@synthesize storeLongitude, storeLatitude, storeMapView, storename;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,15 +30,20 @@
 {
     [super viewDidLoad];
 	
-    NSLog(@"the corrdinates: latitude = %f, logitude = %f", storeLatitude, storeLongitude);
+    NSLog(@"the corrdinates of %@: latitude = %f, logitude = %f", storename, storeLatitude, storeLongitude);
 }
 
 - (void) viewDidAppear:(BOOL)animated
 {
     CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(storeLatitude, storeLongitude);
-    MKCoordinateSpan span = MKCoordinateSpanMake(0.1, 0.2);
+    MKCoordinateSpan span = MKCoordinateSpanMake(0.01, 0.02);
     [self.storeMapView setRegion:MKCoordinateRegionMake(coord, span) animated:YES];
     
+    MKPointAnnotation* dropPin = [[MKPointAnnotation alloc] init];
+    [dropPin setCoordinate:coord];
+    [dropPin setTitle:storename];   
+    [self.storeMapView addAnnotation:dropPin];
 }
+
 
 @end
